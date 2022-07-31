@@ -3,7 +3,13 @@
    <application
         android:label="flutter_sqlite_example"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"       
+        android:allowBackup="false"
+        android:fullBackupOnly="false"
+        >
+         <!-- Para evitar que o celular do usuario salve os arquivos no google drive ou outro tipo de backup !! -->
+         <!-- utilize o android:allowBackup="false" - android:fullBackupOnly="false" -->
+         <!-- assim quando o usaurio desinstalar o app ele vem zerado !! -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
