@@ -1,0 +1,5 @@
+Ele nos traz o tipo de 'barra' \ / e tipo de concatenação que utilizamos dentro do sistema operacional
+por exemplo no mac os utilizamos um caminho assim: c:/User/documents
+no windows utilizamos assim c:\user\documents
+
+então esse package path nos ajuda com isso ele vai colocar certinho a \ / de cada sistema operacional
