@@ -11,8 +11,35 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    DatabaseSqflite().openConnection();
+    _database();
     super.initState();
+  }
+
+  void _database() async {
+    final database = await DatabaseSqflite().openConnection();
+
+    //fazendo insert
+    // database.insert('teste', {'nome': 'Vitor1'});
+    // database.insert('teste', {'nome': 'Vitor2'});
+    // database.insert('teste', {'nome': 'Vitor3'});
+
+    //deletando
+    // database.delete('teste', where: 'nome = ?', whereArgs: ['Vitor']);
+
+    //dando um update
+    // database.update('teste', {'nome': 'Academia do flutter'},
+    //     where: 'nome = ?', whereArgs: ['Vitor2']);
+
+    //Para ver o banco de dados
+    // var result = await database.query('teste');
+    // print(result);
+
+    // database.rawInsert('insert into teste values(null, ?)', ['Vitor7']);
+    // database
+    //     .rawInsert('update teste set nome = ? where id = ?', ['seninha', 5]);
+    // database.rawDelete('delete from teste where id = ?', [5]);
+    var result3 = await database.rawQuery('select * from teste');
+    print(result3);
   }
 
   @override

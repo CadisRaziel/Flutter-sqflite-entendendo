@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 
 class DatabaseSqflite {
-  Future<void> openConnection() async {
+  Future<Database> openConnection() async {
     //getDatabasesPath -> é a pasta aonde ele guarda tudo que tem gravado dentro do sqflite
     final databasePath = await getDatabasesPath();
 
@@ -13,7 +13,7 @@ class DatabaseSqflite {
     //!Repare agora nós utilizando o package PATH
     final databasefinalPath = join(databasePath, 'SQLITE_EXAMPLE');
 
-    await openDatabase(
+    return await openDatabase(
       databasefinalPath,
       //sempre começa no 1, só alteramos a versão quando alteramos algo na database
       //!Repare que o version sempre acompanha o onUpgrade porém uma versão a mais
